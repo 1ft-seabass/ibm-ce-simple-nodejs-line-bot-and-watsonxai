@@ -115,8 +115,12 @@ async function handleEvent(event) {
 
   const responseAIData = await askWatsonXAI(message,tokenData.access_token);
 
-  let answer = '[!] watsonx.ai から、うまく返答されませんでしたm(_ _)m';
+  let answer = `[!] AI から、うまく返答されませんでしたm(_ _)m
+----
+`;
+
   if(responseAIData){
+    answer += JSON.stringify(responseAIData,null, 2);
     if(responseAIData.results){
       if(responseAIData.results.length > 0){
         if(responseAIData.results[0].generated_text != ''){
