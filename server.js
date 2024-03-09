@@ -128,8 +128,7 @@ async function handleEvent(event) {
     if(responseAIData.results){
       if(responseAIData.results.length > 0){
         if(responseAIData.results[0].generated_text != ''){
-          answer = `
-${responseAIData.results[0].generated_text}
+          answer = `${responseAIData.results[0].generated_text}
 ----
 results ${responseAIData.results.length}`
 ;
