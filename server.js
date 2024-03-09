@@ -64,11 +64,15 @@ If you don't know the answer to a question, please don't share false information
 ----------------
 `,
           parameters: {
-              decoding_method: "greedy",
-              max_new_tokens: 900,
-              min_new_tokens: 200,
-              stop_sequences: [],
-              repetition_penalty: 1.05
+            "decoding_method": "sample",
+            "max_new_tokens": 900,
+            "min_new_tokens": 100,
+            "random_seed": null,
+            "stop_sequences": [],
+            "temperature": 0.7,
+            "top_k": 50,
+            "top_p": 1,
+            "repetition_penalty": 1
           },
           model_id: "ibm/granite-8b-japanese",
           project_id: process.env.WATSONX_PROJECT_ID
