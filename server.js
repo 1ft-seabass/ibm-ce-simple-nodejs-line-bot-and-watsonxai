@@ -66,7 +66,7 @@ If you don't know the answer to a question, please don't share false information
           parameters: {
               decoding_method: "greedy",
               max_new_tokens: 900,
-              min_new_tokens: 0,
+              min_new_tokens: 200,
               stop_sequences: [],
               repetition_penalty: 1.05
           },
@@ -124,7 +124,11 @@ async function handleEvent(event) {
     if(responseAIData.results){
       if(responseAIData.results.length > 0){
         if(responseAIData.results[0].generated_text != ''){
-          answer = responseAIData.results[0].generated_text;
+          answer = `
+${responseAIData.results[0].generated_text}
+----
+results ${responseAIData.results.length}`
+;
         }
       }
     }
